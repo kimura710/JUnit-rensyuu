@@ -3,17 +3,11 @@ package junit.tutorial;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
-import java.util.ArrayList;
-
-import javax.swing.plaf.synth.SynthGraphicsUtils;
-
 import org.junit.Test;
-import org.junit.validator.PublicClassValidator;
 
 @SuppressWarnings("deprecation")
 public class CalculatorTest {
 
-	@SuppressWarnings("deprecation")
 	@Test
 	public void muitiplyで3と4の算結果が取得できる() {
 		Calculator calc = new Calculator();
@@ -21,7 +15,6 @@ public class CalculatorTest {
 		int actual = calc.multply(3, 4);
 		assertThat(actual,is(expected));
 	}
-	@SuppressWarnings("deprecation")
 	@Test
 	public void muitiplyで5と7の乗算結果が取得できる() {
 		Calculator calc = new Calculator();
@@ -43,18 +36,18 @@ public class CalculatorTest {
 		calc.divide(5, 0);
 		
 	}
+	// 標準的な振る舞いを検証するテスト
 	@Test
-	public void 要素が2つ追加された状態で要素をremoveするとsizeが1となる（）throws Exception{
-		// SetUp
-		ArrayList<String> str = new ArrayList<String>();
-	    str.add("Hello");
-	    str.add("World");
-	    // Exercise
-	    str.remove(0);
-	    // Verify
-	    assertThat(str.size(), is(1));
-	    assertThat(str.get(0), is("World"));
-	
+	public void addに3と4を与えると7を返す() throws Exception{
+	 // SetUp-初期化
+		Calculator sut = new Calculator();
+		sut.init();
+	 // Exercise-テストの実行
+		int actual = sut.add(3,4);
+     // Verifyー検証
+		assertThat(actual, is(7));
+	// Tear Downー後処理
+		
 	}
 	
 
