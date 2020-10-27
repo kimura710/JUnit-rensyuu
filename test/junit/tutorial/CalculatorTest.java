@@ -3,9 +3,14 @@ package junit.tutorial;
 import static org.hamcrest.CoreMatchers.*;
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
+
+import javax.swing.plaf.synth.SynthGraphicsUtils;
+
 import org.junit.Test;
 import org.junit.validator.PublicClassValidator;
 
+@SuppressWarnings("deprecation")
 public class CalculatorTest {
 
 	@SuppressWarnings("deprecation")
@@ -37,6 +42,19 @@ public class CalculatorTest {
 		Calculator calc = new Calculator();
 		calc.divide(5, 0);
 		
+	}
+	@Test
+	public void 要素が2つ追加された状態で要素をremoveするとsizeが1となる（）throws Exception{
+		// SetUp
+		ArrayList<String> str = new ArrayList<String>();
+	    str.add("Hello");
+	    str.add("World");
+	    // Exercise
+	    str.remove(0);
+	    // Verify
+	    assertThat(str.size(), is(1));
+	    assertThat(str.get(0), is("World"));
+	
 	}
 	
 
