@@ -23,6 +23,8 @@ public class ParameterizedTest02 {
 	public static Fixture INT_PARAM_2 = new Fixture(0,2,2);
 	
 	
+	
+	
 	@SuppressWarnings("deprecation")
 	@Theory
 	public void testCase(Fixture params)throws Exception{

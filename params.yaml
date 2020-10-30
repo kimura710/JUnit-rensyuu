@@ -1,0 +1,6 @@
+!!seq[
+!!test.ParameterizedTest$Fixture
+{x:1,y:2,expected:3},
+!!test.ParameterizedTest$Fixture
+{x:0,y:2,expected:2},
+]
